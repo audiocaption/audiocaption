@@ -346,8 +346,10 @@ of our validation system, please contact us via email.</li>
                                                 <a tooltip="Sound of vehicles that fly by gaining support from the air.">aircraft</a>
                                               <br>
                                               <label class="col-sm-21 control-label">Description: </label>
-                                              <div style="color:green"> ✔  Distant explosion and propeller of an aircraft.</div>
+                                              <div style="color:green"> ✔  A Distant explosion and propeller of an aircraft.</div>
+                                              <div style="color:green"> ✔  Explosion far away and propeller of an aircraft.</div>
                                               <div style="color:red"> ❌explosion sound with propeller of an aircraft.</div>
+                                              <div style="color:red"> ❌explosion, propeller, aircraft.</div>
                                               <div style="color:black"> </div>
                                             </div>
                                         <button id="show_video_4" type="button" style="width:103px;height:20px;background-color:#c92a2a;color:white">Video Hint</button>
@@ -395,7 +397,7 @@ of our validation system, please contact us via email.</li>
                     <td style="width:{{ (100/3)|int|string }}%;vertical-align: top">
                         <div class="panel-body item-wrapper">
                             <table>
-                                 <label style="position:relative;font-size:130%">4. Speech</label>
+                                 <label style="position:relative;font-size:130%">4.1 Speech (no semantics)</label>
                                   <div>
                                     <button type="button" style="width:103px;height:20px;background-color:#e67700;color:white" onclick="ref_restartFunction_6()"><i style="font-size:16px" class="material-icons">replay</i></button>
                                     <button type="button" style="width:103px;height:20px;background-color:#2b8a3e;color:white" onclick="ref_playFunction_6()"><i style="font-size:16px" class="material-icons">play_arrow</i></button>
@@ -407,6 +409,7 @@ of our validation system, please contact us via email.</li>
                                               <br>
                                                 <a tooltip="The sound of a small slit drum made from a single piece of wood, making a very short, clean sound.">wood block</a>
                                                 <a tooltip="The sound of a musical instrument that is sounded by being struck or scraped by a beater; struck, scraped or rubbed by hand; or struck against another similar instrument.">percussion</a>
+                                                <a tooltip="Speech is the vocalized form of human communication, created out of the phonetic combination of a limited set of vowel and consonant speech sound units.">speech</a>
                                               <br>
                                               <label class="col-sm-21 control-label">Description: </label>
                                               <div style="color:green"> ✔  A man speaks and taps on wood block with drum sticks at a controlled pace.</div>
@@ -425,7 +428,41 @@ of our validation system, please contact us via email.</li>
                         </div>
                     </td>
                     </tr>
+
                     <tr>
+                    <td style="width:{{ (100/3)|int|string }}%;vertical-align: top">
+                        <div class="panel-body item-wrapper">
+                            <table>
+                                 <label style="position:relative;font-size:130%">4.2 Speech (no direction!)</label>
+                                  <div>
+                                    <button type="button" style="width:103px;height:20px;background-color:#e67700;color:white" onclick="ref_restartFunction_9()"><i style="font-size:16px" class="material-icons">replay</i></button>
+                                    <button type="button" style="width:103px;height:20px;background-color:#2b8a3e;color:white" onclick="ref_playFunction_9()"><i style="font-size:16px" class="material-icons">play_arrow</i></button>
+                                    <button type="button" style="width:103px;height:20px;background-color:#c92a2a;color:white" onclick="ref_pauseFunction_9()"><i style="font-size:16px" class="material-icons">pause</i></button>
+                                  </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-20">
+                                              <label>Word Hints: </label>
+                                              <br>
+                                                <a tooltip="Speech is the vocalized form of human communication, created out of the phonetic combination of a limited set of vowel and consonant speech sound units.">speech</a>
+                                              <br>
+                                              <label class="col-sm-21 control-label">Description: </label>
+                                              <div style="color:green"> ✔ Birds are chirping in the background when two males are communicating and chuckling followed by a females voice speaking out. </div>
+                                              <div style="color:red"> ❌Birds are chirping when a male <b>communicating to</b> another male who chuckles and then a females voice speaks out.</div>
+                                              <div style="color:red"> ❌Birds are chirping when a male <b>talking to</b> another male who chuckles and then a females voice speaks out.</div>
+                                              <div style="color:red"> ❌Birds are chirping when a male <b>speaking to</b> another male who chuckles and then a females voice speaks out.</div>
+                                              <div style="color:black"> </div>
+                                            </div>
+                                        <button id="show_video_9" type="button" style="width:103px;height:20px;background-color:#c92a2a;color:white">Video Hint</button>
+                                        <div id="video_player_9">
+                                        <iframe class="ytplayer" style="display:block;position:relative;" id='reference_player_9' type="text/html" width="319" height="200" src="https://www.youtube.com/embed/7CZAOlWgbfM?enablejsapi=1&rel=0&showinfo=0&controls=0">
+                                        </iframe>
+                                        </div>
+
+                                        </div>
+                            </table>
+                        </div>
+                    </td>
+
                     <td style="width:{{ (100/3)|int|string }}%;vertical-align: top">
                         <div class="panel-body item-wrapper">
                             <table>
@@ -489,7 +526,42 @@ of our validation system, please contact us via email.</li>
                             </table>
                         </div>
                     </td>
+                    </tr>
+                    <tr>
+                    <td style="width:{{ (100/3)|int|string }}%;vertical-align: top">
+                        <div class="panel-body item-wrapper">
+                            <table>
+                                 <label style="position:relative;font-size:130%">7. Frequency (Repetition of a sound)</label>
+                                <div>
+                                <button type="button" style="width:103px;height:20px;background-color:#e67700;color:white" onclick="ref_restartFunction_10()"><i style="font-size:16px" class="material-icons">replay</i></button>
+                                <button type="button" style="width:103px;height:20px;background-color:#2b8a3e;color:white" onclick="ref_playFunction_10()"><i style="font-size:16px" class="material-icons">play_arrow</i></button>
+                                <button type="button" style="width:103px;height:20px;background-color:#c92a2a;color:white" onclick="ref_pauseFunction_10()"><i style="font-size:16px" class="material-icons">pause</i></button>
+                                </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-20">
+                                              <label>Word Hints: </label>
+                                              <br>
+                                                <a tooltip="Speech is the vocalized form of human communication, created out of the phonetic combination of a limited set of vowel and consonant speech sound units.">speech</a>
+                                              <br>
+                                              <label class="col-sm-21 control-label">Description: </label>
+                                              <div style="color:green"> ✔  A low voice woman speaks followed by <b>repeated</b> shouting of a woman with laughing in the background.</div>
+                                              <div style="color:green"> ✔  A low voice woman speaks followed by a <b>series of</b> shouting of a woman with laughing in the background.</div>
+                                              <div style="color:green"> ✔  A woman speaks forcefully followed by <b>some sequence of</b> woman shouting while people laugh in the background.</div>
+                                              <div style="color:red"> ❌a woman speaks with shouts and laughting </div>
+                                              <div style="color:red"> ❌woman speak, shout, man speak, laugh </div>
+                                              <div style="color:black"> </div>
+                                            </div>
+                                        <button id="show_video_10" type="button" style="width:103px;height:20px;background-color:#c92a2a;color:white">Video Hint</button>
+                                          <div id="video_player_10">
+                                            <iframe class="ytplayer" style="display:block;position:relative;" id='reference_player_10' type="text/html" width="319" height="200" src="https://www.youtube.com/embed/9KHFegabQIA?enablejsapi=1&rel=0&showinfo=0&controls=0">
+                                            </iframe>
+                                          </div>
 
+
+                                     </div>
+                            </table>
+                        </div>
+                    </td>
                     </tr>
                 </table>
                 <br />
@@ -545,6 +617,18 @@ of our validation system, please contact us via email.</li>
                   x.style.display = "none";
                 }
               var x = document.getElementById("video_player_8");
+                if (x.style.display === "none") {
+                  x.style.display = "block";
+                } else {
+                  x.style.display = "none";
+                }
+              var x = document.getElementById("video_player_9");
+                if (x.style.display === "none") {
+                  x.style.display = "block";
+                } else {
+                  x.style.display = "none";
+                }
+              var x = document.getElementById("video_player_10");
                 if (x.style.display === "none") {
                   x.style.display = "block";
                 } else {
@@ -622,6 +706,24 @@ of our validation system, please contact us via email.</li>
                 $toggle.text(($target.is(':visible') ? 'Click to Hide' : 'Video Hint'));
             });
         });
+        $("#show_video_9").click(function(){
+            var $target = $('#video_player_9'),
+                $toggle = $(this);
+
+            $target.slideToggle( 800, function () {
+                $toggle.text(($target.is(':visible') ? 'Click to Hide' : 'Video Hint'));
+            });
+        });
+        $("#show_video_10").click(function(){
+            var $target = $('#video_player_10'),
+                $toggle = $(this);
+
+            $target.slideToggle( 800, function () {
+                $toggle.text(($target.is(':visible') ? 'Click to Hide' : 'Video Hint'));
+            });
+        });
+
+
 
 
         // console.log(typeof parseInt('audio.start_time'))
@@ -640,6 +742,8 @@ of our validation system, please contact us via email.</li>
         var ref_player_6;
         var ref_player_7;
         var ref_player_8;
+        var ref_player_9;
+        var ref_player_10;
 
         var ref_section_1 = {
           start: parseInt('40'),
@@ -674,6 +778,14 @@ of our validation system, please contact us via email.</li>
         var ref_section_8 = {
           start: parseInt('30'),
           end: parseInt('40')
+        };
+        var ref_section_9 = {
+          start: parseInt('0'),
+          end: parseInt('10')
+        };
+        var ref_section_10 = {
+          start: parseInt('380'),
+          end: parseInt('390')
         };
 
 
@@ -737,6 +849,20 @@ of our validation system, please contact us via email.</li>
             },
             autoplay: '0'
           });
+          ref_player_9 = new YT.Player('reference_player_9', {
+            events: {
+              'onReady': refPlayerReady_9,
+              'onStateChange': refPlayerStateChange_9,
+            },
+            autoplay: '0'
+          });
+          ref_player_10 = new YT.Player('reference_player_10', {
+            events: {
+              'onReady': refPlayerReady_10,
+              'onStateChange': refPlayerStateChange_10,
+            },
+            autoplay: '0'
+          });
 
         };
 
@@ -774,6 +900,14 @@ of our validation system, please contact us via email.</li>
         function refPlayerReady_8(event) {
           ref_player_8.setPlaybackQuality("small")
           ref_player_8.seekTo(ref_section_8.start);
+        }
+        function refPlayerReady_9(event) {
+          ref_player_8.setPlaybackQuality("small")
+          ref_player_8.seekTo(ref_section_8.start);
+        }
+        function refPlayerReady_10(event) {
+          ref_player_10.setPlaybackQuality("small")
+          ref_player_10.seekTo(ref_section_10.start);
         }
 
 
@@ -914,6 +1048,40 @@ of our validation system, please contact us via email.</li>
           }
         };
 
+        function refPlayerStateChange_9(event) {
+          switch (event.data) {
+            case YT.PlayerState.PLAYING:
+              var duration = ref_section_9.end - ref_section_9.start;
+              var current_time = ref_player_9.getCurrentTime();
+              var remaining_time = ref_section_9.end - current_time;
+              if (remaining_time > 0){
+                timer = setTimeout(ref_restartVideoSection_9, remaining_time * 1000);
+              }
+              break;
+            case YT.PlayerState.PAUSED:
+              clearTimeout(timer);
+              break;
+          }
+        };
+
+
+        function refPlayerStateChange_10(event) {
+          switch (event.data) {
+            case YT.PlayerState.PLAYING:
+              var duration = ref_section_10.end - ref_section_10.start;
+              var current_time = ref_player_10.getCurrentTime();
+              var remaining_time = ref_section_10.end - current_time;
+              if (remaining_time > 0){
+                timer = setTimeout(ref_restartVideoSection_10, remaining_time * 1000);
+              }
+              break;
+            case YT.PlayerState.PAUSED:
+              clearTimeout(timer);
+              break;
+          }
+        };
+
+
         function ref_restartVideoSection_1() {
           ref_player_1.seekTo(ref_section_1.start);
         }
@@ -937,6 +1105,12 @@ of our validation system, please contact us via email.</li>
         }
         function ref_restartVideoSection_8() {
           ref_player_8.seekTo(ref_section_8.start);
+        }
+        function ref_restartVideoSection_10() {
+          ref_player_10.seekTo(ref_section_10.start);
+        }
+        function ref_restartVideoSection_9() {
+          ref_player_9.seekTo(ref_section_9.start);
         }
 
 
@@ -981,6 +1155,16 @@ of our validation system, please contact us via email.</li>
           clearTimeout(timer);
           ref_player_8.seekTo(ref_section_8.start);
           ref_player_8.playVideo();
+        }
+        function ref_restartFunction_9() {
+          clearTimeout(timer);
+          ref_player_9.seekTo(ref_section_9.start);
+          ref_player_9.playVideo();
+        }
+        function ref_restartFunction_10() {
+          clearTimeout(timer);
+          ref_player_10.seekTo(ref_section_10.start);
+          ref_player_10.playVideo();
         }
 
         function ref_playFunction_8() {
@@ -1031,6 +1215,26 @@ of our validation system, please contact us via email.</li>
         function ref_pauseFunction_7() {
           ref_player_7.pauseVideo();
         }
+        function ref_playFunction_8() {
+          ref_player_8.playVideo();
+        }
+        function ref_pauseFunction_8() {
+          ref_player_8.pauseVideo();
+        }
+        function ref_playFunction_9() {
+          ref_player_9.playVideo();
+        }
+        function ref_pauseFunction_9() {
+          ref_player_9.pauseVideo();
+        }
+        function ref_playFunction_10() {
+          ref_player_10.playVideo();
+        }
+        function ref_pauseFunction_10() {
+          ref_player_10.pauseVideo();
+        }
+
+
 
 
 
