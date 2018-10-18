@@ -563,6 +563,38 @@ of our validation system, please contact us via email.</li>
                             </table>
                         </div>
                     </td>
+                    <td style="width:{{ (100/3)|int|string }}%;vertical-align: top">
+                        <div class="panel-body item-wrapper">
+                            <table>
+                                 <label style="position:relative;font-size:130%">8. Low-level Description</label>
+                                <div>
+                                <button type="button" style="width:103px;height:20px;background-color:#e67700;color:white" onclick="ref_restartFunction_11()"><i style="font-size:16px" class="material-icons">replay</i></button>
+                                <button type="button" style="width:103px;height:20px;background-color:#2b8a3e;color:white" onclick="ref_playFunction_11()"><i style="font-size:16px" class="material-icons">play_arrow</i></button>
+                                <button type="button" style="width:103px;height:20px;background-color:#c92a2a;color:white" onclick="ref_pauseFunction_11()"><i style="font-size:16px" class="material-icons">pause</i></button>
+                                </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-20">
+                                              <label>Word Hints: </label>
+                                              <br>
+                                                <a tooltip="The sound of a basketball bouncing on a hard surface, such as a basketball court.">basketball bounce</a>
+                                                <a tooltip="Speech is the vocalized form of human communication, created out of the phonetic combination of a limited set of vowel and consonant speech sound units.">speech</a>
+                                              <br>
+                                              <label class="col-sm-21 control-label">Description: </label>
+                                              <div style="color:green"> ✔  People speaking along with squeaking noises with ball bouncing multiple times, followed by a long buzzer alarm.</div>
+                                              <div style="color:red"> ❌People are <b>playing basketball</b> </div>
+                                              <div style="color:black"> </div>
+                                            </div>
+                                        <button id="show_video_11" type="button" style="width:103px;height:20px;background-color:#c92a2a;color:white">Video Hint</button>
+                                          <div id="video_player_11">
+                                            <iframe class="ytplayer" style="display:block;position:relative;" id='reference_player_11' type="text/html" width="319" height="200" src="https://www.youtube.com/embed/ABs3qGwvW-U?enablejsapi=1&rel=0&showinfo=0&controls=0">
+                                            </iframe>
+                                          </div>
+
+
+                                     </div>
+                            </table>
+                        </div>
+                    </td>
                     </tr>
                 </table>
                 <br />
@@ -630,6 +662,12 @@ of our validation system, please contact us via email.</li>
                   x.style.display = "none";
                 }
               var x = document.getElementById("video_player_10");
+                if (x.style.display === "none") {
+                  x.style.display = "block";
+                } else {
+                  x.style.display = "none";
+                }
+              var x = document.getElementById("video_player_11");
                 if (x.style.display === "none") {
                   x.style.display = "block";
                 } else {
@@ -723,6 +761,14 @@ of our validation system, please contact us via email.</li>
                 $toggle.text(($target.is(':visible') ? 'Click to Hide' : 'Video Hint'));
             });
         });
+        $("#show_video_11").click(function(){
+            var $target = $('#video_player_11'),
+                $toggle = $(this);
+
+            $target.slideToggle( 800, function () {
+                $toggle.text(($target.is(':visible') ? 'Click to Hide' : 'Video Hint'));
+            });
+        });
 
 
 
@@ -745,6 +791,7 @@ of our validation system, please contact us via email.</li>
         var ref_player_8;
         var ref_player_9;
         var ref_player_10;
+        var ref_player_11;
 
         var ref_section_1 = {
           start: parseInt('40'),
@@ -787,6 +834,10 @@ of our validation system, please contact us via email.</li>
         var ref_section_10 = {
           start: parseInt('380'),
           end: parseInt('390')
+        };
+        var ref_section_11 = {
+          start: parseInt('20'),
+          end: parseInt('29')
         };
 
 
@@ -864,6 +915,13 @@ of our validation system, please contact us via email.</li>
             },
             autoplay: '0'
           });
+          ref_player_11 = new YT.Player('reference_player_11', {
+            events: {
+              'onReady': refPlayerReady_11,
+              'onStateChange': refPlayerStateChange_11,
+            },
+            autoplay: '0'
+          });
 
         };
 
@@ -909,6 +967,10 @@ of our validation system, please contact us via email.</li>
         function refPlayerReady_10(event) {
           ref_player_10.setPlaybackQuality("small")
           ref_player_10.seekTo(ref_section_10.start);
+        }
+        function refPlayerReady_11(event) {
+          ref_player_11.setPlaybackQuality("small")
+          ref_player_11.seekTo(ref_section_11.start);
         }
 
 
@@ -1083,6 +1145,23 @@ of our validation system, please contact us via email.</li>
         };
 
 
+        function refPlayerStateChange_11(event) {
+          switch (event.data) {
+            case YT.PlayerState.PLAYING:
+              var duration = ref_section_11.end - ref_section_11.start;
+              var current_time = ref_player_11.getCurrentTime();
+              var remaining_time = ref_section_11.end - current_time;
+              if (remaining_time > 0){
+                timer = setTimeout(ref_restartVideoSection_11, remaining_time * 1000);
+              }
+              break;
+            case YT.PlayerState.PAUSED:
+              clearTimeout(timer);
+              break;
+          }
+        };
+
+
         function ref_restartVideoSection_1() {
           ref_player_1.seekTo(ref_section_1.start);
         }
@@ -1109,6 +1188,9 @@ of our validation system, please contact us via email.</li>
         }
         function ref_restartVideoSection_10() {
           ref_player_10.seekTo(ref_section_10.start);
+        }
+        function ref_restartVideoSection_11() {
+          ref_player_11.seekTo(ref_section_11.start);
         }
         function ref_restartVideoSection_9() {
           ref_player_9.seekTo(ref_section_9.start);
@@ -1166,6 +1248,11 @@ of our validation system, please contact us via email.</li>
           clearTimeout(timer);
           ref_player_10.seekTo(ref_section_10.start);
           ref_player_10.playVideo();
+        }
+        function ref_restartFunction_11() {
+          clearTimeout(timer);
+          ref_player_11.seekTo(ref_section_11.start);
+          ref_player_11.playVideo();
         }
 
         function ref_playFunction_8() {
@@ -1233,6 +1320,12 @@ of our validation system, please contact us via email.</li>
         }
         function ref_pauseFunction_10() {
           ref_player_10.pauseVideo();
+        }
+        function ref_playFunction_11() {
+          ref_player_11.playVideo();
+        }
+        function ref_pauseFunction_11() {
+          ref_player_11.pauseVideo();
         }
 
 
